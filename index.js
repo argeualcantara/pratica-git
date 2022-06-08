@@ -13,14 +13,23 @@ app.use(express.json());
 
 app.get('/namespace', (req, res) => {
     nsClient.listNamespace(k8s, req, res);
+    if (req != null) {
+        console.log("req não é null");
+    }
 })
 
 app.post('/namespace/:namespace', (req, res) => {
     nsClient.createNameSpace(k8s, req, res);
+    if (req != null) {
+        console.log("req não é null");
+    }
 })
 
 app.get('/namespace/:namespace/pods', (req, res) => {
     podClient.listPodsFromNamespace(k8s, req, res);
+    if (req != null) {
+        console.log("req não é null");
+    }
 })
 
 app.post('/namespace/:namespace/deploy', (req, res) => {
