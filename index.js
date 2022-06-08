@@ -14,6 +14,7 @@ app.use(express.json());
 app.get('/namespace', (req, res) => {
     nsClient.listNamespace(k8s, req, res);
     if (req != null) {
+        console.log(req);
         console.log("req não é null");
     }
 })
